@@ -60,6 +60,11 @@ set(BGFX_CONFIG_MAX_TEXTURES "" CACHE STRING "Specify maximum texture count")
 set(BGFX_CONFIG_MAX_TEXTURE_SAMPLERS "" CACHE STRING "Specify maximum texture samplers")
 set(BGFX_CONFIG_MAX_SHADERS "" CACHE STRING "Specify shader count")
 set(BGFX_CONFIG_SORT_KEY_NUM_BITS_PROGRAM "" CACHE STRING "Specify maximum program count as 2^(program bits)")
+set(BGFX_CMAKE_USER_SCRIPT "" CACHE STRING "Path to custom cmake script to include")
+
+if (BGFX_CMAKE_USER_SCRIPT)
+	include(${BGFX_CMAKE_USER_SCRIPT})
+endif()
 
 set_property(CACHE BGFX_LIBRARY_TYPE PROPERTY STRINGS STATIC SHARED)
 

@@ -22,7 +22,7 @@ set_target_properties(bimg_decode PROPERTIES FOLDER "bgfx")
 target_include_directories(
 	bimg_decode PUBLIC $<BUILD_INTERFACE:${BIMG_DIR}/include> $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
 	PRIVATE ${BIMG_DIR}/3rdparty #
-			${BIMG_DIR}/3rdparty/tinyexr/deps/miniz #
+			${MINIZ_INCLUDE_DIR} #
 )
 
 file(GLOB_RECURSE BIMG_DECODE_SOURCES #
