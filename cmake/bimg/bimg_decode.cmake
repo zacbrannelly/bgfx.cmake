@@ -32,4 +32,4 @@ file(GLOB_RECURSE BIMG_DECODE_SOURCES #
 
 target_sources(bimg_decode PRIVATE ${BIMG_DECODE_SOURCES})
 
-target_link_libraries(bimg_decode PUBLIC bx)
+target_link_libraries(bimg_decode PUBLIC bx ${MINIZ_LIBRARIES})
