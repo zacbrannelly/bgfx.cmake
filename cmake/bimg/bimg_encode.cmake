@@ -28,6 +28,7 @@ target_include_directories(
 			${BIMG_DIR}/3rdparty/nvtt #
 			${MINIZ_INCLUDE_DIR} #
 			${LIBSQUISH_INCLUDE_DIR} #
+			${TINYEXR_INCLUDE_DIR} #
 )
 
 file(
@@ -46,10 +47,10 @@ file(
 	${BIMG_DIR}/3rdparty/nvtt/**.h #
 	${BIMG_DIR}/3rdparty/pvrtc/**.cpp #
 	${BIMG_DIR}/3rdparty/pvrtc/**.h #
-	${BIMG_DIR}/3rdparty/tinyexr/**.h #
 	${BIMG_DIR}/3rdparty/iqa/include/**.h #
 	${BIMG_DIR}/3rdparty/iqa/source/**.c #
 	${LIBSQUISH_SOURCES}
+	${TINYEXR_LIBRARIES}
 )
 
 target_sources(bimg_encode PRIVATE ${BIMG_ENCODE_SOURCES})
