@@ -27,6 +27,7 @@ target_include_directories(
 			${BIMG_DIR}/3rdparty/iqa/include #
 			${BIMG_DIR}/3rdparty/nvtt #
 			${MINIZ_INCLUDE_DIR} #
+			${LIBSQUISH_INCLUDE_DIR} #
 )
 
 file(
@@ -35,8 +36,6 @@ file(
 	${BIMG_DIR}/include/* #
 	${BIMG_DIR}/src/image_encode.* #
 	${BIMG_DIR}/src/image_cubemap_filter.* #
-	${BIMG_DIR}/3rdparty/libsquish/**.cpp #
-	${BIMG_DIR}/3rdparty/libsquish/**.h #
 	${BIMG_DIR}/3rdparty/edtaa3/**.cpp #
 	${BIMG_DIR}/3rdparty/edtaa3/**.h #
 	${BIMG_DIR}/3rdparty/etc1/**.cpp #
@@ -50,11 +49,12 @@ file(
 	${BIMG_DIR}/3rdparty/tinyexr/**.h #
 	${BIMG_DIR}/3rdparty/iqa/include/**.h #
 	${BIMG_DIR}/3rdparty/iqa/source/**.c #
+	${LIBSQUISH_SOURCES}
 )
 
 target_sources(bimg_encode PRIVATE ${BIMG_ENCODE_SOURCES})
 
-target_link_libraries(bimg_encode PUBLIC bx)
+target_link_libraries(bimg_encode PUBLIC bx ${LIBSQUISH_LIBRARIES})
 
 include(CheckCXXCompilerFlag)
 foreach(flag "-Wno-implicit-fallthrough" "-Wno-shadow" "-Wno-shift-negative-value" "-Wno-undef")
